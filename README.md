@@ -43,6 +43,17 @@ MySQL Performance Schema 是一个用于监控数据库运行时性能的功能�
 6. slow-query-execute-query.py脚本对MySQL数据库进行随机查询。
 7. 运行slow-query-digest.py脚本,查看和统计慢SQL语句，该脚本可以统计出top SQL，以及每个查询的详细分析，包括执行次数、总执行时间、平均执行时间、发送的行数和检查的行数；这些指标是优化查询性能的重要参考依据，可以帮助数据库管理员和开发人员识别需要优化的查询，并了解查询的整体性能特征。
 
+## 分析TopSQL
+```shell
+python3 slow-query-digest.py 
+    --host localhost 
+    --user your_username 
+    --password your_password 
+    --database mytest  
+    --days 3 
+    --limit 10
+```
+
 ## 贡献
 
 如果你有任何改进建议或发现了 Bug,欢迎提交 Issue 或 Pull Request。
